@@ -4,11 +4,13 @@
 
         <div class="globalFlex">
 
-          <div class="icon-container globalFlex">
-            <div>
-              <img src="../../assets/icons/home.svg">
+          <router-link :to="{ name:'Home' }">
+            <div class="icon-container globalFlex">
+              <div>
+                <img src="../../assets/icons/home.svg">
+              </div>
             </div>
-          </div>
+          </router-link>
 
           <div class="icon-container globalFlex">
             <div>
