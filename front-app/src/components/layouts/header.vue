@@ -40,7 +40,7 @@
 
         <div class="globalFlex">
             <div class="icon-container" style="margin-bottom: 30px">
-              <div>
+              <div id="logout">
                 <img src="../../assets/icons/logout.svg">
               </div>
             </div>
@@ -82,24 +82,28 @@ export default {
   }
 
   .icon-container img{
-    width: 35px;
-    height: 35px;
+    width: 30px;
+    height: 30px;
     filter: invert(53%) sepia(8%) saturate(329%) hue-rotate(197deg) brightness(96%) contrast(95%);
   }
 
   .icon-container div {
-    padding: 7px 7px 4px 7px;
+    padding: 13px 13px 9px 13px;
     border-radius: 999px;
     cursor: pointer;
   }
 
   .icon-container div:hover{
     background: #FB9400;
-    transition: 0.2s;
+    transition: 0.3s;
   }
 
   .icon-container div:hover img{
     filter: invert(100%) sepia(10%) saturate(1073%) hue-rotate(294deg) brightness(115%) contrast(101%);
+  }
+
+  #logout:hover{
+    background: #ff2222;
   }
 
 </style>
