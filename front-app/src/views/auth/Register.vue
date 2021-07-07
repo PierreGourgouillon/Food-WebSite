@@ -19,7 +19,7 @@
               <div class="buttonDesign"><span>Register</span></div>
               <div class="rowFlex" style="justify-content: flex-start">
                 <input type="checkbox">
-                <span style="margin-left: 10px">I have read and Agree to the Terms of Service</span>
+                <span style="margin-left: 10px; color: black">I have read and Agree to the Terms of Service</span>
               </div>
             </div>
           </div>
@@ -34,6 +34,7 @@ export default {
 </script>
 
 <style scoped>
+
   .container-body{
     display: flex;
     flex-direction: column;
@@ -44,6 +45,21 @@ export default {
     height: 100vh;
     background: #2c3e50;
     color: white;
+  }
+
+  .container-register h1{
+    font-size: 50px;
+    margin-block: 0;
+    color: black;
+    font-family: 'Roboto', sans-serif;
+  }
+
+  .container-register h2{
+    font-size: 20px;
+    color: black;
+    font-family: "Roboto", sans-serif;
+    font-weight: 400;
+
   }
 
   .globalFlex{
@@ -95,7 +111,7 @@ export default {
     padding-left: 40px;
     padding-right: 40px;
     padding-bottom: 50px;
-    background: green;
+    background: white;
     border-radius: 15px;
   }
 
