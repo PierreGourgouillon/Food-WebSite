@@ -1,7 +1,6 @@
 <template>
   <header>
       <div class="globalFlex" style="padding-top: 30px; justify-content: space-between;height: 100%;width: 100%">
-
         <div class="globalFlex">
 
           <router-link :to="{ name:'Home' }">
