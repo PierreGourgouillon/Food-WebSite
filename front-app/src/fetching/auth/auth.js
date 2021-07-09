@@ -34,7 +34,7 @@ export function fetchRegister(email, name, firstName, password){
 }
 
 export function fetchLogin(email, password) {
-    fetch("localhost:3000/api/authentification/login",{
+    return fetch("http://localhost:3000/api/authentification/login",{
         method: "post",
         headers:{
             "Content-Type" : "application/json"
@@ -44,5 +44,24 @@ export function fetchLogin(email, password) {
             password: password,
         })
     })
+        .then((response) => {
+            if (response.status === 200) {
+                return response.json()
+            }else{
+                return "Le mail/mot de passe est incorrect "
+            }
+        })
+        .then((res) => {
+            if (res.userId !== undefined) {
+                sessionStorage.setItem("userId", res.userId)
+                sessionStorage.setItem("token", res.token)
+                window.location.href = "/"
+            }else{
+                return res
+            }
+        })
+        .catch(() => {
+            return "Une erreur serveur s'est produite"
+        })
 }
 
