@@ -26,6 +26,10 @@
               <input type="password" class="inputDesign" placeholder="Mot de passe" v-model="password" v-if="!error.includes('password')">
               <input type="password" class="inputDesign error" placeholder="Mot de passe" v-model="password" v-else>
 
+              <div class="globalFlex" style="justify-content: center;align-items: center; color: red" v-if="errorMessage !== ''">
+                <p>{{ errorMessage }}</p>
+              </div>
+
               <div class="buttonDesign" @click="validationData"><span>Register</span></div>
               <div class="rowFlex" style="justify-content: flex-start;margin-top: 15px;align-items: center">
                 <input type="checkbox" v-model="agreeTerms">
@@ -53,10 +57,11 @@ export default {
       password: "",
       agreeTerms: false,
       error: [],
+      errorMessage: "",
     }
   },
   methods: {
-    validationData () {
+    async validationData () {
       if (!this.email) {
         this.error.push("email")
       }else{
@@ -88,7 +93,10 @@ export default {
       }
 
       if(this.error.length === 0 ){
-        auth.fetchRegister(this.email, this.name, this.firstName, this.password)
+        let error = await auth.fetchRegister(this.email, this.name, this.firstName, this.password)
+        if (error !== undefined){
+          this.errorMessage = error
+        }
       }
     }
   }
