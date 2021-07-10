@@ -5,7 +5,12 @@ const userSchema = mongoose.Schema({
     email: { type: String, required: true, unique: true },
     name: { type: String, required: true },
     firstName: { type: String, required: true },
-    password: { type: String, required: true }
+    password: { type: String, required: true },
+    otherInformation: {
+        address: { type: String, required: false },
+        phone: { type: String, required: false  },
+    },
+    admin: { type: Boolean, default: false }
 })
 
 userSchema.plugin(uniqueValidator)

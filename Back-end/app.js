@@ -4,6 +4,7 @@ const bodyParser = require("body-parser")
 const mongoose = require("mongoose")
 
 const authentificationRoutes = require("./routes/authentificationUser")
+const foodRoutes = require("./routes/food")
 
 app.use((req, res, next) => {
     res.setHeader('Access-Control-Allow-Origin', '*');
@@ -20,5 +21,6 @@ mongoose.connect('mongodb+srv://Admin:GN6whb3ocXlzjeHg@cluster0.9x5zu.mongodb.ne
 app.use(bodyParser.json())
 
 app.use("/api/authentification", authentificationRoutes)
+app.use("/api/foods", foodRoutes)
 
 module.exports = app
