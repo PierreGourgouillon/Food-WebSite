@@ -48,7 +48,7 @@
 import Header from "../components/layouts/header"
 import SearchBar from "../components/ui/searchBar";
 import ProfilBlock from "../components/ui/profilBlock";
-import CategoryBlock from "../components/ui/categoryBlock"
+import CategoryBlock from "../components/ui/cardCategory"
 import ViewAll from "../components/ui/viewAll"
 
 export default {
