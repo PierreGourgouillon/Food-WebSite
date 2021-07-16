@@ -24,8 +24,13 @@
 
               </div>
 
-              <div class="rowFlex">
-                <categoryBlock></categoryBlock>
+              <div class="rowFlex" style="margin-top: 40px">
+                <categoryCard title="Hamburger" image="hamburger.png" link="Home"></categoryCard>
+                <categoryCard title="Drink" image="drink.png" link="Home"></categoryCard>
+                <categoryCard title="Kebab" image="kebab.png" link="Home"></categoryCard>
+                <categoryCard title="Sushi" image="sushi.png" link="Home"></categoryCard>
+                <categoryCard title="Vegan" image="vegan.png" link="Home"></categoryCard>
+                <categoryCard title="Chinois" image="chinease.png" link="Home"></categoryCard>
               </div>
             </div>
             <div class="top-3"></div>
@@ -35,8 +40,11 @@
       </div>
 
       <div class="container-footer">
-        <div class="container-profil padding">
+        <div class="container-profil">
           <profilBlock></profilBlock>
+        </div>
+        <div style="margin-top: 50px">
+          <cardPaiement></cardPaiement>
         </div>
       </div>
 
@@ -48,15 +56,17 @@
 import Header from "../components/layouts/header"
 import SearchBar from "../components/ui/searchBar";
 import ProfilBlock from "../components/ui/profilBlock";
-import CategoryBlock from "../components/ui/cardCategory"
+import CategoryCard from "../components/ui/cardCategory"
 import ViewAll from "../components/ui/viewAll"
+import CardPaiement from "../components/ui/cardPaiement";
 
 export default {
   name: "Home",
   components:{
+    CardPaiement,
     ProfilBlock,
     SearchBar,
-    CategoryBlock,
+    CategoryCard,
     ViewAll,
     Header
   }
@@ -117,6 +127,7 @@ main{
   flex-direction: column;
   flex-basis: 30%;
   background: white;
+  align-items: center;
 }
 
 .container-profil{
@@ -124,6 +135,9 @@ main{
   flex-direction: row;
   justify-content: flex-end;
   align-items: center;
+  width: 99%;
+  margin-top: 30px;
+  margin-right: 50px;
 }
 
 .test{

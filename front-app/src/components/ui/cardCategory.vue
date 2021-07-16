@@ -1,24 +1,31 @@
 <template>
-  <div class="columnFlex card transition">
+  <router-link :to="{ name: `${link}`}">
+    <div class="columnFlex card transition">
       <div class="columnFlex transition">
         <div class="imageFood transition">
-          <img src="../../assets/foodIconsCategory/hamburger.png">
+          <img :src="require(`../../assets/foodIconsCategory/${image}`)">
         </div>
       </div>
-    <div class="columnFlex transition" style="margin-top: 10px">
-      <span class="titleCategory transition">Pizza</span>
-    </div>
-    <div class="columnFlex transition">
-      <div class="imageArrow transition" >
-        <img src="../../assets/icons/arrow_right.svg">
+      <div class="columnFlex transition" style="margin-top: 10px">
+        <span class="titleCategory transition">{{ title }}</span>
+      </div>
+      <div class="columnFlex transition">
+        <div class="imageArrow transition" >
+          <img src="../../assets/icons/arrow_right.svg">
+        </div>
       </div>
     </div>
-  </div>
+  </router-link>
 </template>
 
 <script>
 export default {
-  name: "categoryBlock"
+  name: "categoryBlock",
+  props: {
+    title: String,
+    image: String,
+    link: String
+  }
 }
 </script>
 
@@ -33,10 +40,12 @@ export default {
 }
 
 .card{
-  padding: 20px 30px;
+  padding: 20px 0px;
+  width: 160px;
   background: #FFFFFF;
-  border-radius: 13px;
+  border-radius: 20px;
   cursor: pointer;
+  margin-left: 20px;
 }
 
 .imageArrow{
@@ -64,10 +73,10 @@ export default {
 
 .imageFood {
   border-radius: 999px;
-  width: 40px;
-  height: 40px;
+  width: 35px;
+  height: 35px;
   display: flex;
-  padding: 5px;
+  padding: 7px;
   justify-content: center;
   align-items: center;
 }
@@ -77,7 +86,7 @@ export default {
 }
 
 .transition {
-  transition: 0.2s;
+  transition: 0.3s;
 }
 
 .card:hover .imageFood{
@@ -86,8 +95,7 @@ export default {
 
 .card:hover{
   background: #FB9400;
-  box-shadow: 0px 10px 0px #FB9400;
-}
+  box-shadow: rgba(251, 148, 0, 0.3) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;}
 
 .card:hover span{
   color: white;
@@ -99,5 +107,9 @@ export default {
 
 .card:hover .imageArrow img {
   filter: invert(74%) sepia(77%) saturate(4713%) hue-rotate(6deg) brightness(104%) contrast(109%);
+}
+
+a{
+  text-decoration: none;
 }
 </style>
