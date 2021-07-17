@@ -128,6 +128,7 @@ main{
   flex-basis: 30%;
   background: white;
   align-items: center;
+  z-index: 1;
 }
 
 .container-profil{
