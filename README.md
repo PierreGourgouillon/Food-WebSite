@@ -1,2 +1,2 @@
 # Food-WebSite
-Voici le projet eheh
+Projet de site internet pour l'achat de nourriture
