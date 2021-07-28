@@ -33,7 +33,9 @@
                 <categoryCard title="Chinois" image="chinease.png" link="Home"></categoryCard>
               </div>
             </div>
-            <div class="top-3"></div>
+            <div class="top-3">
+              <foodItem></foodItem>
+            </div>
           </div>
         </div>
 
@@ -59,10 +61,12 @@ import ProfilBlock from "../components/ui/profilBlock";
 import CategoryCard from "../components/ui/cardCategory"
 import ViewAll from "../components/ui/viewAll"
 import CardPaiement from "../components/ui/cardPaiement";
+import foodItem from "../components/ui/foodItem";
 
 export default {
   name: "Home",
   components:{
+    foodItem,
     CardPaiement,
     ProfilBlock,
     SearchBar,
@@ -151,5 +155,9 @@ main{
 
 .food-category{
   margin-top: 50px;
+}
+
+.top-3{
+  margin-top: 80px;
 }
 </style>

@@ -100,7 +100,7 @@ export default {
   right: 25px;
   color: white;
   font-size: 10px;
-  letter-spacing: 1.5 px;
+  letter-spacing: 1.5px;
   font-family: "Roboto", sans-serif;
 }
 
