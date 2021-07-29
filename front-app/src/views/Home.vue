@@ -18,10 +18,8 @@
             <div class="food-category globalFlex">
 
               <div class="rowFlex" style="justify-content: space-between;align-items: center">
-
                 <div><span class="title" style="font-size: 25px">Menu Category</span></div>
                 <ViewAll></ViewAll>
-
               </div>
 
               <div class="rowFlex" style="margin-top: 40px">
@@ -35,6 +33,8 @@
             </div>
             <div class="top-3">
               <foodItem></foodItem>
+              <foodItem></foodItem>
+              <foodItem></foodItem>
             </div>
           </div>
         </div>
@@ -47,6 +47,23 @@
         </div>
         <div style="margin-top: 50px">
           <cardPaiement></cardPaiement>
+
+          <div class="globalFlex" style="margin-top: 90px">
+            <div class="rowFlex" style="justify-content: space-between;align-items: center">
+
+              <div><span class="title" style="font-size: 25px">Order Menu</span></div>
+              <ViewAll></ViewAll>
+            </div>
+
+            <div class="listCheckout">
+              <cardFoodCheckout image="pizza.png" numberItem="5" name-food="Italian Pizza" price="13.18"></cardFoodCheckout>
+              <cardFoodCheckout image="pizza.png" numberItem="5" name-food="Italian Pizza" price="13.18"></cardFoodCheckout>
+              <cardFoodCheckout image="pizza.png" numberItem="5" name-food="Italian Pizza" price="13.18"></cardFoodCheckout>
+              <cardFoodCheckout image="pizza.png" numberItem="5" name-food="Italian Pizza" price="13.18"></cardFoodCheckout>
+              <cardFoodCheckout image="pizza.png" numberItem="5" name-food="Italian Pizza" price="13.18"></cardFoodCheckout>
+            </div>
+
+          </div>
         </div>
       </div>
 
@@ -62,6 +79,7 @@ import CategoryCard from "../components/ui/cardCategory"
 import ViewAll from "../components/ui/viewAll"
 import CardPaiement from "../components/ui/cardPaiement";
 import foodItem from "../components/ui/foodItem";
+import cardFoodCheckout from "../components/ui/cardFoodCheckout"
 
 export default {
   name: "Home",
@@ -72,7 +90,8 @@ export default {
     SearchBar,
     CategoryCard,
     ViewAll,
-    Header
+    Header,
+    cardFoodCheckout
   }
 }
 </script>
@@ -158,6 +177,23 @@ main{
 }
 
 .top-3{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
   margin-top: 80px;
 }
+
+.listCheckout{
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin-top: 30px;
+  overflow-y: scroll;
+  height: 350px;
+}
+
+.listCheckout::-webkit-scrollbar {
+  display: none;
+}
+
 </style>

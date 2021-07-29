@@ -1,5 +1,5 @@
 <template>
-  <div class="card" style="border: 1px solid red">
+  <div class="card">
       <div class="globalFlex">
         <div class="globalFlex" style="align-items: center">
           <div class="imageFood">
