@@ -4,7 +4,7 @@
     <span class="brand">VISA</span>
     <span class="amount">$ 1560.00</span>
     <span class="owner">Jeremy Mathew</span>
-    <img class="chip" src="../../assets/images/puce-cb.svg">
+    <img class="chip" src="../../../assets/images/puce-cb.svg">
     <span class="numbers">58253242</span>
   </div>
 </template>

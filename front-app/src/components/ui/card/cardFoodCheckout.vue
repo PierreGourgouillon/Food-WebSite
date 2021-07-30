@@ -1,8 +1,8 @@
 <template>
-  <div id="card" class="rowFlex">
+  <div id="card" class="rowFlex" ref="card">
     <div class="columnFlex">
       <div id="image">
-        <img :src="require(`../../assets/foodImages/${image}`)">
+        <img :src="require(`../../../assets/foodImages/${image}`)">
       </div>
     </div>
 
@@ -12,7 +12,7 @@
         <span class="styleSpan"><span id="x">x</span> {{ numberItem }}</span>
       </div>
 
-      <div id="absolute">
+      <div id="absolute" v-on:click="deleteFood">
         <span style="color: black">x</span>
       </div>
 
@@ -31,6 +31,11 @@ export default {
     numberItem: Number,
     nameFood: String,
     price: Number,
+  },
+  methods:{
+    deleteFood: function () {
+      this.$refs.card.remove()
+    }
   }
 }
 </script>

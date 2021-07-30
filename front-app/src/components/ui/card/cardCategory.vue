@@ -3,7 +3,7 @@
     <div class="columnFlex card transition">
       <div class="columnFlex transition">
         <div class="imageFood transition">
-          <img :src="require(`../../assets/foodIconsCategory/${image}`)">
+          <img :src="require(`../../../assets/foodIconsCategory/${image}`)">
         </div>
       </div>
       <div class="columnFlex transition" style="margin-top: 10px">
@@ -11,7 +11,7 @@
       </div>
       <div class="columnFlex transition">
         <div class="imageArrow transition" >
-          <img src="../../assets/icons/arrow_right.svg">
+          <img src="../../../assets/icons/arrow_right.svg">
         </div>
       </div>
     </div>

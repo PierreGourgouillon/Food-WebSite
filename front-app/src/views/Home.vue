@@ -32,9 +32,9 @@
               </div>
             </div>
             <div class="top-3">
-              <foodItem></foodItem>
-              <foodItem></foodItem>
-              <foodItem></foodItem>
+              <foodItem name="Pizza Bello" price="13.667" image="pizza.png"></foodItem>
+              <foodItem name="Pizza Melozini" price="10" image="pizza.png"></foodItem>
+              <foodItem name="Pizza Royale" price="15.45" image="pizza.png"></foodItem>
             </div>
           </div>
         </div>
@@ -55,14 +55,8 @@
               <ViewAll></ViewAll>
             </div>
 
-            <div class="listCheckout">
-              <cardFoodCheckout image="pizza.png" numberItem="5" name-food="Italian Pizza" price="13.18"></cardFoodCheckout>
-              <cardFoodCheckout image="pizza.png" numberItem="5" name-food="Italian Pizza" price="13.18"></cardFoodCheckout>
-              <cardFoodCheckout image="pizza.png" numberItem="5" name-food="Italian Pizza" price="13.18"></cardFoodCheckout>
-              <cardFoodCheckout image="pizza.png" numberItem="5" name-food="Italian Pizza" price="13.18"></cardFoodCheckout>
-              <cardFoodCheckout image="pizza.png" numberItem="5" name-food="Italian Pizza" price="13.18"></cardFoodCheckout>
-            </div>
-
+            <div class="listCheckout" id="listCheckout"></div>
+            <button-checkout style="margin-top: 15px"></button-checkout>
           </div>
         </div>
       </div>
@@ -75,11 +69,12 @@
 import Header from "../components/layouts/header"
 import SearchBar from "../components/ui/searchBar";
 import ProfilBlock from "../components/ui/profilBlock";
-import CategoryCard from "../components/ui/cardCategory"
+import CategoryCard from "../components/ui/card/cardCategory"
 import ViewAll from "../components/ui/viewAll"
-import CardPaiement from "../components/ui/cardPaiement";
+import CardPaiement from "../components/ui/card/cardPaiement";
 import foodItem from "../components/ui/foodItem";
-import cardFoodCheckout from "../components/ui/cardFoodCheckout"
+import cardFoodCheckout from "../components/ui/card/cardFoodCheckout"
+import buttonCheckout from "../components/ui/button/checkout"
 
 export default {
   name: "Home",
@@ -89,8 +84,10 @@ export default {
     ProfilBlock,
     SearchBar,
     CategoryCard,
+    buttonCheckout,
     ViewAll,
     Header,
+    // eslint-disable-next-line vue/no-unused-components
     cardFoodCheckout
   }
 }
@@ -101,6 +98,7 @@ export default {
   display: flex;
   flex-direction: row;
   flex-basis: auto;
+
   padding: 0;
   margin: 0;
 }

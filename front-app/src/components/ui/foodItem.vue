@@ -3,13 +3,13 @@
       <div class="globalFlex">
         <div class="globalFlex" style="align-items: center">
           <div class="imageFood">
-            <img src="../../assets/foodImages/pizza.png">
+            <img :src="require(`../../assets/foodImages/${image}`)">
           </div>
         </div>
           <div class="globalFlex">
               <div class="rowFlex" style="margin-top: 20px;justify-content: space-between">
                   <div class="globalFlex">
-                    <span class="fontStyle">Mushroom Pizza</span>
+                    <span class="fontStyle">{{ name }}</span>
                     <div class="rowFlex" style="padding-top: 5px;padding-bottom: 5px">
                       <img  class="stars" src="../../assets/icons/star_like.svg">
                       <img  class="stars" src="../../assets/icons/star_like.svg">
@@ -17,10 +17,10 @@
                       <img  class="stars" src="../../assets/icons/star_like.svg">
                       <img  class="stars" src="../../assets/icons/star_like.svg">
                     </div>
-                    <span class="fontStyle"><span id="dollars">$</span>7.49</span>
+                    <span class="fontStyle"><span id="dollars">$</span>{{ price }}</span>
                   </div>
                   <div class="rowFlex" style="align-items: flex-end">
-                      <div class="button">
+                      <div class="button" @click="add">
                         <span>+</span>
                       </div>
                   </div>
@@ -31,8 +31,35 @@
 </template>
 
 <script>
+import CardFoodCheckout from "./card/cardFoodCheckout";
+import Vue from 'vue'
+
 export default {
-  name: "foodItem"
+  name: "foodItem",
+  components:{
+    // eslint-disable-next-line vue/no-unused-components
+    CardFoodCheckout
+  },
+  props:{
+    name: String,
+    image: String,
+    price: String,
+  },
+  methods: {
+    add: function () {
+      let componentClass = Vue.extend(CardFoodCheckout)
+      let cardCheckout = new componentClass({
+        propsData:{
+          image: this.image,
+          numberItem: "1",
+          nameFood: this.name,
+          price: this.price,
+        }
+      })
+      cardCheckout.$mount()
+      document.getElementById("listCheckout").appendChild(cardCheckout.$el)
+    }
+  }
 }
 </script>
 
