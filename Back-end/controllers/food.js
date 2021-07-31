@@ -3,7 +3,8 @@ const Food = require("../models/Food")
 
 exports.create = (req, res, next) => {
     const food = new Food({
-        ...req.body
+        ...req.body,
+        image: `${req.protocol}://${req.get('host')}/images/${req.file.filename}`
     })
 
     food.save()

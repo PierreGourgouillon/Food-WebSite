@@ -1,5 +1,5 @@
 <template>
-  <div id="card" class="rowFlex" ref="card">
+  <div id="card" class="rowFlex slide-fwd-center" ref="card">
     <div class="columnFlex">
       <div id="image">
         <img :src="require(`../../../assets/foodImages/${image}`)">
@@ -47,11 +47,11 @@ export default {
    background: #FFFFFF;
    border-radius: 10px;
    padding: 5px;
-   transition: 0.3s;
    cursor: pointer;
  }
 
  #card:hover{
+   transition: 0.3s;
    background: #FB9400;
  }
 
@@ -120,5 +120,31 @@ export default {
   #absolute span{
     margin-right: 1px;
   }
+
+ .slide-fwd-center {
+   -webkit-animation: slide-fwd-center 3s cubic-bezier(0.600, -0.280, 0.735, 0.045) both;
+   animation: slide-fwd-center 3s cubic-bezier(0.600, -0.280, 0.735, 0.045) both;
+ }
+
+ @-webkit-keyframes slide-fwd-center {
+   0% {
+     -webkit-transform: translateZ(0);
+     transform: translateZ(0);
+   }
+   100% {
+     -webkit-transform: translateZ(160px);
+     transform: translateZ(160px);
+   }
+ }
+ @keyframes slide-fwd-center {
+   0% {
+     -webkit-transform: translateZ(0);
+     transform: translateZ(0);
+   }
+   100% {
+     -webkit-transform: translateZ(160px);
+     transform: translateZ(160px);
+   }
+ }
 
 </style>

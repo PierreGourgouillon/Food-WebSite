@@ -5,6 +5,7 @@ const mongoose = require("mongoose")
 
 const authentificationRoutes = require("./routes/authentificationUser")
 const foodRoutes = require("./routes/food")
+const path = require('path');
 
 app.use((req, res, next) => {
     res.setHeader('Access-Control-Allow-Origin', '*');
@@ -22,5 +23,6 @@ app.use(bodyParser.json())
 
 app.use("/api/authentification", authentificationRoutes)
 app.use("/api/foods", foodRoutes)
+app.use('/images', express.static(path.join(__dirname, 'images')));
 
 module.exports = app
