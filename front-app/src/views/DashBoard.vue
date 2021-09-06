@@ -11,26 +11,42 @@
           </div>
         </div>
 
-        <div class="block-expenses rowFlex">
+        <div class="block-expenses">
           <expenses></expenses>
+          <expenses></expenses>
+          <expenses></expenses>
+        </div>
+
+        <div style="margin-top: 25px">
+          <graphic-dashboard></graphic-dashboard>
+        </div>
+
+        <div id="container-informations" class="rowFlex">
+
         </div>
 
       </div>
 
-      <div class="container-footer"></div>
+      <div class="container-footer">
+        <BlockProfil style="margin-top: 80px"></BlockProfil>
+      </div>
     </main>
   </div>
 </template>
 
 <script>
 import Header from "../components/layouts/header"
-import expenses from "../components/ui/expenses";
+import expenses from "../components/ui/dashboard/expenses";
+import graphicDashboard from "../components/ui/dashboard/graphicDashboard";
+import BlockProfil from "../components/ui/dashboard/block-profil";
 
 export default {
   name: "DashBoard",
   components: {
+    BlockProfil,
     Header,
-    expenses
+    expenses,
+    graphicDashboard,
   }
 }
 </script>
@@ -102,5 +118,17 @@ export default {
     border: 1px solid black;
     border-radius: 20px;
     padding: 20px 40px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-top: 15px;
   }
+
+  #container-informations {
+    border: 1px solid black;
+    border-radius: 20px;
+    padding: 20px 40px;
+    margin-top: 25px;
+  }
+
 </style>
