@@ -37,6 +37,10 @@ export default {
     color: white;
   }
 
+  #option:hover p{
+    color: white;
+  }
+
   row{
     display: flex;
     flex-direction: row;

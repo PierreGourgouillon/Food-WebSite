@@ -6,7 +6,10 @@
         <div id="title-settings">
           <span>Settings</span>
         </div>
-        <Option name="Compte" description="Vous allez pouvoir modifier vos données personnelles, que ca soit votre nom etc."></Option>
+        <router-link to="/settings/account">
+          <Option name="Compte" description="Vous allez pouvoir modifier vos données personnelles, que ca soit votre nom etc."></Option>
+        </router-link>
+
         <Option name="Compte" description="Vous allez pouvoir modifier vos données personnelles, que ca soit votre nom etc."></Option>
         <Option name="Compte" description="Vous allez pouvoir modifier vos données personnelles, que ca soit votre nom etc."></Option>
         <Option name="Compte" description="Vous allez pouvoir modifier vos données personnelles, que ca soit votre nom etc."></Option>
@@ -14,7 +17,9 @@
 
       </div>
 
-      <div id="contains-settings"></div>
+      <div id="contains-settings">
+        <router-view></router-view>
+      </div>
   </div>
 </template>
 
@@ -32,6 +37,10 @@ export default {
 </script>
 
 <style scoped>
+  a{
+    color: transparent;
+  }
+
   .row{
     display: flex;
     flex-direction: row;
