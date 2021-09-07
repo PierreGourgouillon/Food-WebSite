@@ -31,11 +31,13 @@
             </div>
           </router-link>
 
-          <div class="icon-container globalFlex">
-            <div>
-              <img src="../../assets/icons/settings.svg">
+          <router-link :to="{ name: 'Settings' }">
+            <div class="icon-container globalFlex">
+              <div>
+                <img src="../../assets/icons/settings.svg">
+              </div>
             </div>
-          </div>
+          </router-link>
 
         </div>
 
