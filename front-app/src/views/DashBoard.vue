@@ -28,7 +28,23 @@
       </div>
 
       <div class="container-footer">
-        <BlockProfil style="margin-top: 80px"></BlockProfil>
+        <div id="size-profil">
+          <BlockProfil style="margin-top: 80px"></BlockProfil>
+        </div>
+
+        <div style="width: 85%;">
+          <div id="container-recent">
+            <div>
+              <span id="title-commands">Commandes récentes</span>
+            </div>
+
+            <restaurant name="Mc Donald's" price="48" image="mcdonalds.png"></restaurant>
+            <restaurant name="Burger King" price="20" image="mcdonalds.png"></restaurant>
+            <restaurant name="Mc Donald's" price="10" image="mcdonalds.png"></restaurant>
+          </div>
+        </div>
+
+
       </div>
     </main>
   </div>
@@ -39,6 +55,7 @@ import Header from "../components/layouts/header"
 import expenses from "../components/ui/dashboard/expenses";
 import graphicDashboard from "../components/ui/dashboard/graphicDashboard";
 import BlockProfil from "../components/ui/dashboard/block-profil";
+import restaurant from "../components/ui/dashboard/recentRestaurant";
 
 export default {
   name: "DashBoard",
@@ -47,6 +64,7 @@ export default {
     Header,
     expenses,
     graphicDashboard,
+    restaurant,
   }
 }
 </script>
@@ -129,6 +147,24 @@ export default {
     border-radius: 20px;
     padding: 20px 40px;
     margin-top: 25px;
+  }
+
+  #container-recent{
+    margin-top: 50px;
+  }
+
+  #size-profil{
+    height: 250px;
+    width: 100%;
+    background: #FB9400;
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+  }
+
+  #title-commands{
+    font-family: "Roboto", sans-serif;
+    font-size: 22px;
+    font-weight: 600;
   }
 
 </style>

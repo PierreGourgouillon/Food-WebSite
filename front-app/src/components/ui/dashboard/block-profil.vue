@@ -27,6 +27,7 @@ export default {
   #image{
     display: flex;
     border-radius: 999px;
+    border: 3px solid white;
   }
 
   #image img{
@@ -36,6 +37,12 @@ export default {
   #pseudo{
     display: flex;
     margin-top: 10px;
+  }
+
+  #pseudo span{
+    font-family: "Roboto", sans-serif;
+    font-size: 22px;
+    font-weight: 400;
   }
 
 </style>

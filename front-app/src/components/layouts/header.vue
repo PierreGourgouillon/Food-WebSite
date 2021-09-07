@@ -23,11 +23,13 @@
             </div>
           </div>
 
-          <div class="icon-container globalFlex">
-            <div>
-              <img src="../../assets/icons/favorite.svg">
+          <router-link :to="{ name: 'DashBoard'}">
+            <div class="icon-container globalFlex">
+              <div>
+                <img src="../../assets/icons/favorite.svg">
+              </div>
             </div>
-          </div>
+          </router-link>
 
           <div class="icon-container globalFlex">
             <div>
