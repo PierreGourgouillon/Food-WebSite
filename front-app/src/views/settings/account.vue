@@ -7,8 +7,8 @@
 
       <div id="container-profil" class="column">
         <div id="profil" class="column">
-          <span id="profil-title">Profile</span>
-          <span id="description-profil">This informations will be displayed publicly so be careful what you share.</span>
+          <span class="profil-title">Profile</span>
+          <span class="description-profil">This informations will be displayed publicly so be careful what you share.</span>
         </div>
 
         <div id="identity-name" class="row">
@@ -37,6 +37,45 @@
         </div>
 
         <hr>
+
+        <div class="column">
+          <div class="column" style="margin-top: 30px">
+            <span class="profil-title">Personal Information</span>
+            <span class="description-profil">This information will be displayed publicly so be careful what you share.</span>
+          </div>
+
+          <div class="column">
+            <div class="row personnal">
+              <div class="input">
+                <span>Email address</span>
+                <Input></Input>
+              </div>
+
+              <div class="input" style="margin-right: 15px">
+                <span>Phone number</span>
+                <Input></Input>
+              </div>
+            </div>
+
+              <div class="row personnal">
+                <div class="input">
+                  <span>Street</span>
+                  <Input></Input>
+                </div>
+
+                <div class="input" style="margin-right: 15px">
+                  <span>Language</span>
+                  <Input></Input>
+                </div>
+              </div>
+            <span class="description-profil" style="margin-top: 30px">This account was created on January 5, 8:35:40 PM</span>
+            <hr>
+            <div class="row" style="justify-content: flex-end;margin-top: 30px">
+              <Button name="Cancel" style="margin-right: 15px"></Button>
+              <Button name="Save"></Button>
+            </div>
+          </div>
+        </div>
 
       </div>
 
@@ -88,14 +127,14 @@ export default {
     margin-top: 30px;
   }
 
-  #profil-title{
+  .profil-title{
     font-family: "Roboto", sans-serif;
     font-size: 22px;
     color: black;
     font-weight: 400;
   }
 
-  #description-profil{
+  .description-profil{
     font-family: "Roboto", sans-serif;
     font-size: 16px;
     color: #2c3e50;
@@ -164,6 +203,12 @@ export default {
     border-top: 1px solid rgba(182, 182, 182, 0.4);
     width: 100%;
     margin-top: 30px;
+  }
+
+  .personnal{
+    margin-top: 30px;
+    justify-content: space-between;
+    overflow: hidden;
   }
 
 </style>

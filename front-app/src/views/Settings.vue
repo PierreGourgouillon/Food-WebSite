@@ -9,12 +9,10 @@
         <router-link to="/settings/account">
           <Option name="Compte" description="Vous allez pouvoir modifier vos données personnelles, que ca soit votre nom etc."></Option>
         </router-link>
-
-        <Option name="Compte" description="Vous allez pouvoir modifier vos données personnelles, que ca soit votre nom etc."></Option>
-        <Option name="Compte" description="Vous allez pouvoir modifier vos données personnelles, que ca soit votre nom etc."></Option>
-        <Option name="Compte" description="Vous allez pouvoir modifier vos données personnelles, que ca soit votre nom etc."></Option>
-        <Option name="Compte" description="Vous allez pouvoir modifier vos données personnelles, que ca soit votre nom etc."></Option>
-
+        
+        <router-link to="/settings/security">
+          <Option name="Security" description="Vous allez pouvoir sécuriser votre compte. "></Option>
+        </router-link>
       </div>
 
       <div id="contains-settings">

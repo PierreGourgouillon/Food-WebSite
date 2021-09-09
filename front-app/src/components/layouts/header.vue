@@ -11,11 +11,13 @@
             </div>
           </router-link>
 
-          <div class="icon-container globalFlex">
-            <div>
-              <img src="../../assets/icons/message.svg">
+          <router-link :to="{ name: 'Admin' }">
+            <div class="icon-container globalFlex">
+              <div>
+                <img src="../../assets/icons/message.svg">
+              </div>
             </div>
-          </div>
+          </router-link>
 
           <div class="icon-container globalFlex">
             <div>
@@ -63,8 +65,8 @@ export default {
   header{
     display: flex;
     flex-direction: column;
-    width: 150px;
     height: 100vh;
+    width: 150px;
     background: white;
     border-top-right-radius: 30px;
     border-bottom-right-radius: 30px;
