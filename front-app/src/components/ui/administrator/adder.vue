@@ -1,11 +1,12 @@
 <template>
   <div id="container" class="row">
+
     <div class="container row">
-      <pannel-creator></pannel-creator>
+      <pannel-creator title="Food"></pannel-creator>
     </div>
 
     <div class="container row" style="margin-left: 10%">
-      <pannel-creator></pannel-creator>
+      <pannel-creator title="Restaurant"></pannel-creator>
     </div>
   </div>
 </template>

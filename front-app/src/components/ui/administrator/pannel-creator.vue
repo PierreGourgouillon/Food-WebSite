@@ -1,7 +1,7 @@
 <template>
   <div id="container" class="column">
     <div id="title" class="row">
-      <span>Restaurant</span>
+      <span>{{ title }}</span>
     </div>
     <div class="column">
       <div id="informations" class="column">
@@ -14,21 +14,64 @@
           </div>
 
           <div class="input column">
-            <span>Product Name</span>
+            <span v-if="title === 'Food'">Product Name</span>
+            <span v-if="title === 'Restaurant'">Restaurant Name</span>
             <Input></Input>
           </div>
 
-          <div class="input column">
+          <div class="input column" v-if="title == 'Food'">
             <span>Price (€) </span>
             <Input></Input>
           </div>
+
+          <div class="row" v-if="title == 'Restaurant'" style="justify-content: space-between;margin-right:15px">
+            <div class="input column" style="width: 40%">
+              <span>Street </span>
+              <Input></Input>
+            </div>
+
+            <div class="input column" style="width: 40%">
+              <span>City </span>
+              <Input></Input>
+            </div>
+          </div>
+
 
           <div class="input column" style="width: 100%">
             <span>Description (Optional) </span>
             <textarea></textarea>
           </div>
 
+          <div class="row" v-if="title == 'Food'" style="padding-top: 20px">
+            <div class="input" style="margin-top: 0px">
+              <span>Ingredients</span>
+              <div class="column selector-list">
+                <ingredients name="Potatoes"></ingredients>
+                <ingredients name="Salade"></ingredients>
+                <ingredients name="Steak"></ingredients>
+                <ingredients name="bread"></ingredients>
+              </div>
+            </div>
 
+            <div class="input" style="margin-top: 0px">
+              <span>Restaurants</span>
+              <div class="column selector-list">
+                <ingredients name="Potatoes"></ingredients>
+                <ingredients name="Salade"></ingredients>
+                <ingredients name="Steak"></ingredients>
+                <ingredients name="bread"></ingredients>
+              </div>
+            </div>
+
+          </div>
+
+          <div v-if="title == 'Restaurant'">
+
+          </div>
+
+          <div class="but">
+            <Button name="Save"></Button>
+          </div>
 
         </div>
       </div>
@@ -38,11 +81,18 @@
 
 <script>
 import Input from "../input"
+import ingredients from "../button/selector"
+import Button from "../button/settings"
 
 export default {
   name: "pannel-creator",
+  props:{
+    title:String
+  },
   components: {
     Input,
+    ingredients,
+    Button
   }
 }
 </script>
@@ -63,11 +113,17 @@ export default {
     width: 100%;
     background: white;
     border-radius: 10px;
+    overflow-x: hidden;
+    overflow-y: scroll;
+  }
+
+  #container::-webkit-scrollbar{
+    display: none;
   }
 
   #title{
     justify-content: center;
-    padding: 20px 10px;
+    padding: 15px 10px;
     border-bottom: 3px solid #FB9400;
     color: black;
     font-family: "Roboto", sans-serif;
@@ -75,7 +131,6 @@ export default {
   }
 
   #informations{
-    border: 1px solid blue;
     padding: 30px;
   }
 
@@ -118,5 +173,32 @@ export default {
     font-family: "Roboto", sans-serif;
     font-weight: 400;
     padding: 10px;
+    border: 1px solid rgba(128, 128, 128, 0.5);
+    box-shadow: 0 1px 1px rgba(182, 182, 182, 0.75);
   }
+
+  .selector-list{
+    border: 1px solid rgba(128, 128, 128, 0.5);
+    overflow-y: scroll;
+    width: 90%;
+    height: 170px;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+    padding: 5px;
+    border-radius: 10px;
+    margin-top: 5px;
+  }
+
+  .selector-list::-webkit-scrollbar{
+    display: none;
+  }
+
+  .but{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    width: 100%;
+    margin-top: 7px;
+  }
+
 </style>

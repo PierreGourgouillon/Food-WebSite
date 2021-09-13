@@ -1,5 +1,5 @@
 <template>
-  <div id="overlay" class="row center">
+  <div id="overlay" class="row center" ref="test">
     <div id="cont">
       <adder></adder>
     </div>
