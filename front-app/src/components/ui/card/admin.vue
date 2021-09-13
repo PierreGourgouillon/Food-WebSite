@@ -16,7 +16,6 @@
         </div>
         <span style="margin-left: 4px">4.5%</span>
       </div>
-
     </div>
   </div>
 </template>

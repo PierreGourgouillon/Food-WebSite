@@ -1,5 +1,5 @@
 <template>
-  <div class="row">
+  <div id="doc" class="row">
     <Header></Header>
 
     <main>
@@ -12,7 +12,7 @@
           <div id="cont-card">
             <div id="c-card" class="col">
               <div class="row">
-                <card graphic="up"></card>
+                <adder></adder>
                 <card style="margin-left: 30px;" graphic="down"></card>
               </div>
               <div class="row" style="margin-top: 40px">
@@ -34,12 +34,14 @@
 <script>
 import Header from "../../components/layouts/header";
 import card from "../../components/ui/card/admin"
+import adder from "../../components/ui/card/add"
 
 export default {
   name: "pannel",
   components: {
     Header,
     card,
+    adder,
   }
 }
 </script>
